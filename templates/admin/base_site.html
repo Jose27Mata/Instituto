@@ -1,0 +1,36 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+<!--Cambiando el color de la cabecera con el bloque extrastyle-->
+{% block extrastyle %}
+    <style>
+        #header{background: #008E03;}
+        div.breadcrumbs {background: #19B200;}
+        .module h2, .module caption, .inline-group h2 {background-color: #19B200;}
+        a:link, a:visited {color: black; font-family: Comic Sans MS;}
+         .button, input[type=submit], input[type=button], .submit-row input, a.button {background-color: #19B200;}
+         ul.messagelist li {background: #EFB8FF}
+
+         input[type="submit"].default {
+          background: #19B200;
+          }
+
+          input[type="submit"].default:hover {
+           background: #008E03;
+           }
+
+           input[type="submit"]:hover, input[type="button"]:hover {
+             background: #008E03;
+           }
+    </style>
+{% endblock extrastyle %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">Administrador de INBARCCH</a>
+      <img src={% static "img/Instituto.png" %} width="60" alt="60">
+</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
